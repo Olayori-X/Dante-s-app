@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import '../../App.css';
-import '../../style.css';
-import fisher from '../../img/fisher.jpg';
-import cancel from '../../icons/cancel.svg';
-import success from '../../icons/success.svg';
+import '../App.css';
+import '../style.css';
+import fisher from '../img/fisher.jpg';
+import cancel from '../icons/cancel.svg';
+import success from '../icons/success.svg';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { FaSpinner } from 'react-icons/fa';

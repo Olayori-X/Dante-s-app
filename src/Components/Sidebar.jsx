@@ -53,9 +53,9 @@ const Sidebar = () => {
                         <div className="flex justify-between flex-col md:flex-col lg:flex-col space-y-1">
                             {SidebarData.map((nav) => (
                                 <NavLink to={nav.path} key={nav.id} className="flex flex-row items-center gap-2 text-sm text-black2 hover:text-black2 hover:bg-disable font-normal  hover:rounded-md hover:border-primary pl-4 pr-10 py-4">
-                                    // {nav.icons || <Skeleton circle width={20} height={20}/>}
-                                    {/* <NavLink to={nav.path} className="nav">{nav.title}</NavLink> */}
-                                    // {nav.title || <Skeleton/>}
+                                     {nav.icons}
+                                    <NavLink to={nav.path} className="nav">{nav.title}</NavLink>
+                                    {/* {nav.title || <Skeleton/>} */}
                                 </NavLink> 
                             ))}
                         </div><br/>
@@ -107,9 +107,9 @@ const Sidebar = () => {
                                     <div className="flex justify-between flex-col space-y-1">
                                         {SidebarData.map((nav) => (
                                             <NavLink to={nav.path} key={nav.id} className="flex flex-row items-center gap-2 text-sm text-black2 hover:text-black2 hover:bg-disable font-normal  hover:rounded-md hover:border-primary pl-4 pr-10 py-4">
-                                                // {nav.icons || <Skeleton circle width={20} height={20}/>}
-                                                {/* <NavLink to={nav.path} className="nav">{nav.title}</NavLink> */}
-                                                // {nav.title || <Skeleton/>}
+                                                 {nav.icons}
+                                                <NavLink to={nav.path} className="nav">{nav.title}</NavLink>
+                                                 {/* {nav.title || <Skeleton/>} */}
                                             </NavLink> 
                                         ))}
                                     </div><br/>
