@@ -15,7 +15,7 @@ const SidebarData =
       },
 
       {
-        title: "Product",
+        title: "Products",
         path: "/Product",
         icons: <FiBox className="w-5 h-5"/>,
         id: 2

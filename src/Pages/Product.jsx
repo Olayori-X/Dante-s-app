@@ -8,6 +8,7 @@ import { FaPlus } from "react-icons/fa6";
 import Sidebar from "../Components/Sidebar";
 import Header from "../Components/Header";
 import Heading from "../Components/Heading";
+import AddProduct from "../Components/AddProduct";
 // import DataTable from 'react-data-table-component';
 // import axios from 'axios';
 
@@ -20,6 +21,7 @@ function Product () {
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [rowsPerPage] = useState(10);
+    const [isOpen, setIsOpen] = useState(false);
     const [empty, setEmpty] = useState(true);
     const [error, setError] = useState(false);
   
@@ -116,11 +118,13 @@ function Product () {
 
               {/* Header */}
               <div className="w-full">
-                <div className="mb-4 items-center"><Header title="Product" link="/Product"/></div>
+                <div className="mb-4 items-center"><Header title="Products" link="/Product"/></div>
                 
                 <div className="flex flex-row justify-between items-center px-8">
                   <div className="mb-4"><Heading title="Products"/></div>
                   <div className="flex flex-row gap-3 items-center">
+                      
+                      {/* Search */}
                       <div className="">
                             <input
                             type="text"
@@ -131,8 +135,30 @@ function Product () {
                             />
                       </div>
 
+                      {/* Add Product */}
                       <div>
-                      <button className="flex flex-row gap-1 items-center p-4 bg-primary text-white text-sm rounded-md"><FaPlus/>Add Product</button>
+                        <button onclick={} className="flex flex-row gap-1 items-center p-4 bg-primary text-white text-sm rounded-md"><FaPlus/>Add Product</button>
+                        {isOpen && (
+                            <AddProduct/>
+                              // <div className="fixed inset-0 flex justify-center items-center z-80">
+                              //     <div className="absolute inset-0 bg-black opacity-50"></div>
+                              //     <div className="relative bg-white rounded-lg max-w-lg py-8 px-16 z-10">
+                              //         <button
+                              //           className="absolute top-0 right-0 m-4 bg-disable rounded-full text-gray-600 text-2xl hover:text-gray-800 w-10 h-10"
+                              //           onClick={closeModal}>
+                              //         &times;
+                              //         </button>
+
+                              //         <h2 className="text-xl text-primary text-center font-semibold mb-4">Send Notification</h2>
+                              //         <p className="mb-4 text-center">Do you want to send post notification?</p>
+                                      
+                              //         <div className=" flex flex-row justify-items-stretch gap-4 mr-2">
+                              //             <button className="bg-disable text-black2 py-3 px-12 rounded-md" onClick={closeModal}>No</button>
+                              //             <button className="bg-primary text-white py-3 px-12 rounded-md" onClick={proceed}>Send</button>
+                              //         </div>
+                              //     </div>
+                              // </div>
+                          )}
                       </div>
                   </div> 
                 </div>
