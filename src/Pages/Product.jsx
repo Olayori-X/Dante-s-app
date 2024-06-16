@@ -24,6 +24,23 @@ function Product () {
     const [isOpen, setIsOpen] = useState(false);
     const [empty, setEmpty] = useState(true);
     const [error, setError] = useState(false);
+
+    const openModal = () => {
+  
+      // Validate the form inputs
+      // if (!title || !body) {
+      //   setErrorMessage('Both title and body are required.');
+        // setSuccessMessage('');
+      //   setIsModalOpen(true);
+      //   return;
+      // } 
+  
+      // setErrorMessage('');
+      // setSuccessMessage('');
+      setIsOpen(true);
+    };
+
+    const closeModal = () => setIsOpen(false);
   
     const url1 = 'https://35b6-102-89-23-79.ngrok-free.app/api/admin/product/5';
     const url2 = 'https://35b6-102-89-23-79.ngrok-free.app/api/admin/product/?minPrice=&maxPrice=&ratings=';
@@ -137,9 +154,9 @@ function Product () {
 
                       {/* Add Product */}
                       <div>
-                        <button onclick={} className="flex flex-row gap-1 items-center p-4 bg-primary text-white text-sm rounded-md"><FaPlus/>Add Product</button>
-                        {isOpen && (
-                            <AddProduct/>
+                        <button onclick={openModal} className="flex flex-row gap-1 items-center p-4 bg-primary text-white text-sm rounded-md"><FaPlus/>Add Product</button>
+                        <AddProduct show={isOpen} handleClose={closeModal}/>
+                        {/* {isOpen && (
                               // <div className="fixed inset-0 flex justify-center items-center z-80">
                               //     <div className="absolute inset-0 bg-black opacity-50"></div>
                               //     <div className="relative bg-white rounded-lg max-w-lg py-8 px-16 z-10">
@@ -158,7 +175,7 @@ function Product () {
                               //         </div>
                               //     </div>
                               // </div>
-                          )}
+                          )} */}
                       </div>
                   </div> 
                 </div>
