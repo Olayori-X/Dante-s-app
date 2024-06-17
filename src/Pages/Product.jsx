@@ -21,26 +21,32 @@ function Product () {
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [rowsPerPage] = useState(10);
-    const [isOpen, setIsOpen] = useState(false);
+    const [showModal, setShowModal] = useState(false);
     const [empty, setEmpty] = useState(true);
     const [error, setError] = useState(false);
 
+    // const openModal = () => {
+  
+    //   // Validate the form inputs
+    //   // if (!title || !body) {
+    //   //   setErrorMessage('Both title and body are required.');
+    //     // setSuccessMessage('');
+    //   //   setIsModalOpen(true);
+    //   //   return;
+    //   // } 
+  
+    //   // setErrorMessage('');
+    //   // setSuccessMessage('');
+    //   setIsOpen(true);
+    // };
+
     const openModal = () => {
-  
-      // Validate the form inputs
-      // if (!title || !body) {
-      //   setErrorMessage('Both title and body are required.');
-        // setSuccessMessage('');
-      //   setIsModalOpen(true);
-      //   return;
-      // } 
-  
-      // setErrorMessage('');
-      // setSuccessMessage('');
-      setIsOpen(true);
+      setShowModal(true);
     };
 
-    const closeModal = () => setIsOpen(false);
+    const closeModal = () => {
+      setShowModal(false);
+    };
   
     const url1 = 'https://35b6-102-89-23-79.ngrok-free.app/api/admin/product/5';
     const url2 = 'https://35b6-102-89-23-79.ngrok-free.app/api/admin/product/?minPrice=&maxPrice=&ratings=';
@@ -137,8 +143,8 @@ function Product () {
               <div className="w-full">
                 <div className="mb-4 items-center"><Header title="Products" link="/Product"/></div>
                 
-                <div className="flex flex-row justify-between items-center px-8">
-                  <div className="mb-4"><Heading title="Products"/></div>
+                <div className="flex md:flex-row flex-col justify-between items-left md:items-center px-8">
+                  <div className="mb-4 text-left"><Heading title="Products"/></div>
                   <div className="flex flex-row gap-3 items-center">
                       
                       {/* Search */}
@@ -154,8 +160,8 @@ function Product () {
 
                       {/* Add Product */}
                       <div>
-                        <button onclick={openModal} className="flex flex-row gap-1 items-center p-4 bg-primary text-white text-sm rounded-md"><FaPlus/>Add Product</button>
-                        <AddProduct show={isOpen} handleClose={closeModal}/>
+                        <button onClick={openModal} className="flex flex-row gap-1 items-center p-4 bg-primary text-white text-sm rounded-md"><FaPlus/>Add Product</button>
+                        <AddProduct show={showModal} handleClose={closeModal}/>
                         {/* {isOpen && (
                               // <div className="fixed inset-0 flex justify-center items-center z-80">
                               //     <div className="absolute inset-0 bg-black opacity-50"></div>
