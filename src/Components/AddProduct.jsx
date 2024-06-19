@@ -11,6 +11,8 @@ function AddProduct ({ show, handleClose }) {
   const [category, setCategory] = useState('');
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
+  const [price, setPrice] = useState('');
+  const [sale, setSale] = useState('');
   const [image, setImage] = useState(null);
   // const [isOpen, setIsOpen] = useState(false);
   const [errors, setErrorMessage] = useState({});
@@ -60,16 +62,23 @@ function AddProduct ({ show, handleClose }) {
   // const closeModal = () => {
   //   setIsOpen(false);
   // };
+  const onSubmit = (e) => {
+    e.preventDefault();
+    // handleSubmit(formData);
+    handleClose();
+  };
 
-  // const proceed = () => {
-  //   setIsOpen(false);
-  //   // setSuccessMessage('Notification sent successfully');
-  //   // setTitle('');
-  //   // setBody('');
-  //   // setImage('');
-  //   // setIsModalOpen(true);
-  //   return; 
-  // };
+  const proceed = () => {
+    // setIsOpen(false);
+    setSuccessMessage('A new product has been added');
+    setTitle('');
+    setBody('');
+    setImage('');
+    setPrice('');
+    setSale('');
+    // setIsModalOpen(true);
+    return; 
+  };
 
     // if (show) return null;
 
@@ -86,7 +95,7 @@ function AddProduct ({ show, handleClose }) {
                           </button>
 
                           {/* Form */}
-                          <form  className='space-y-4'>
+                          <form onSubmit={onSubmit} className='space-y-4'>
                                 
                                 {/* Category */}
                                 <div className='space-y-1 md:space-y-2 items-start text-left'>
@@ -101,8 +110,8 @@ function AddProduct ({ show, handleClose }) {
                                     >
                                       <option value="" disabled>Select a category</option>
                                       <option value="Fish" className="p-4">Fish</option>
-                                      <option value="Meat">Meat</option>
-                                      <option value="Egg">Egg</option>
+                                      <option value="Meat" className="p-4">Meat</option>
+                                      <option value="Egg" className="p-4">Egg</option>
                                     </select>
                                       {errors.category && <span style={{ color: 'red' }}>{errors.category}</span>}<br/>
                                 </div>
@@ -117,7 +126,7 @@ function AddProduct ({ show, handleClose }) {
                                         value={title}
                                         onChange={(e) => setTitle(e.target.value)}
                                         // required
-                                        />
+                                    />
                                         {errors.title && <span style={{ color: 'red' }}>{errors.title}</span>}<br/>
                                 </div>
         
@@ -139,8 +148,6 @@ function AddProduct ({ show, handleClose }) {
                                     
                                     {image ? (
                                       <div
-                                        // onMouseEnter={handleImageHover}
-                                        // onMouseLeave={handleImageHoverExit}
                                         style={{ display: 'inline-block' }}
                                       >
                                         <img
@@ -207,41 +214,45 @@ function AddProduct ({ show, handleClose }) {
                                       </div>
                                     )}
                                 </div>
+
+                                {/* Price */}
+                                <div className='space-y-2 text-left'>
+                                    <label htmlFor="body" className='text-md text-left text-black2'>Price</label><br/>
+                                    <input 
+                                        className='border p-4 w-full rounded-md border-disable bg-white focus:outline-disable text-black' 
+                                        type='text' 
+                                        id = "price" 
+                                        value={price}
+                                        onChange={(e) => setPrice(e.target.value)}
+                                        placeholder="N"
+                                        // required
+                                    />
+                                    {errors.price && <span style={{ color: 'red' }}>{errors.price}</span>}<br/>
+                                </div>
+
+                                {/* Sale */}
+                                <div className='space-y-2 text-left'>
+                                    <label htmlFor="body" className='text-md text-left text-black2'>Available for sale</label><br/>
+                                    <input 
+                                        className='border p-4 w-full rounded-md border-disable bg-white focus:outline-disable text-black2' 
+                                        type='text' 
+                                        id = "sale" 
+                                        value={sale}
+                                        onChange={(e) => setSale(e.target.value)}
+                                        // required
+                                    />
+                                    {errors.sale && <span style={{ color: 'red' }}>{errors.sale}</span>}<br/>
+                                </div>
                                 
                                 {/* Submit Button */}
                                 <div className="grid justify-items-end">
                                   <button
-                                      // onClick = {handleSubmit} 
-                                      type='submit'  
+                                      onClick = {proceed} 
+                                      // type='submit'  
                                       className=' py-4 px-24 rounded-md border-fa bg-primary hover:bg-black cursor-pointer text-white text-md font-bold'
                                   >Send</button>
-        
-                                  {/* {isOpen && (
-                                      <div className="fixed inset-0 flex justify-center items-center z-80">
-                                          <div className="absolute inset-0 bg-black opacity-50"></div>
-                                          <div className="relative bg-white rounded-lg max-w-lg py-8 px-16 z-10">
-                                              <button
-                                                className="absolute top-0 right-0 m-4 bg-disable rounded-full text-gray-600 text-2xl hover:text-gray-800 w-10 h-10"
-                                                onClick={closeModal}>
-                                              &times;
-                                              </button>
-        
-                                              <h2 className="text-xl text-primary text-center font-semibold mb-4">Send Notification</h2>
-                                              <p className="mb-4 text-center">Do you want to send post notification?</p>
-                                              
-                                              <div className=" flex flex-row justify-items-stretch gap-4 mr-2">
-                                                  <button className="bg-disable text-black2 py-3 px-12 rounded-md" onClick={closeModal}>No</button>
-                                                  <button className="bg-primary text-white py-3 px-12 rounded-md" onClick={proceed}>Send</button>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  )} */}
                                 </div> 
                           </form>
-                                        
-                          <div className=" flex flex-row justify-items-stretch gap-4 mr-2">
-                              {/* <button className="bg-primary text-white py-3 px-12 rounded-md" onClick={proceed}>Add</button> */}
-                          </div>
                   </div>
               </div>
           )}

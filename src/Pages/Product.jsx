@@ -48,8 +48,8 @@ function Product () {
       setShowModal(false);
     };
   
-    const url1 = 'https://35b6-102-89-23-79.ngrok-free.app/api/admin/product/5';
-    const url2 = 'https://35b6-102-89-23-79.ngrok-free.app/api/admin/product/?minPrice=&maxPrice=&ratings=';
+    const url1 = 'https://35b6-102-89-23-79.ngrok-free.app/api/product/create';
+    const url2 = 'https://35b6-102-89-23-79.ngrok-free.app/api/product/category/3';
   
 
     useEffect(() => {
