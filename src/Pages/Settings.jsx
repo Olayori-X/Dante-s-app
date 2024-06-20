@@ -8,8 +8,11 @@ import { FaUsers } from "react-icons/fa";
 import { TbCurrencyNaira } from "react-icons/tb";
 import { FiBox } from "react-icons/fi";
 import { RiListView } from "react-icons/ri";
-import { FaCircleUser } from "react-icons/fa6";
+import { HiUser } from "react-icons/hi2";
+import { MdPayments } from "react-icons/md";
 import { RxCaretRight } from "react-icons/rx";
+import { BiShieldQuarter } from "react-icons/bi";
+import { RiDeleteBin5Fill } from "react-icons/ri";
 import { Link } from 'react-router-dom';
 // import Skeleton from 'react-loading-skeleton';
 
@@ -47,9 +50,9 @@ const Settings = () => {
                <div className="border border-disable rounded-md px-10 py-8 mx-8">
                 <div className="gap-5 flex flex-col">
                     {/* Manage Profile */}
-                    <div className="flex flex-row justify-between bg-fa px-4 py-8 rounded-md">
+                    <div className="flex flex-row justify-between bg-fa p-8 rounded-md">
                         <Link className="md:flex md:flex-row items-center text-md gap-2 text-black2">
-                            <FaCircleUser className="text-primary font-xl size-8"/>
+                            <HiUser className="text-white font-xl size-10 bg-primary p-2 rounded-full"/>
                             <p className="text-black2 font-medium">Manage Profile</p>
                         </Link>
 
@@ -59,9 +62,9 @@ const Settings = () => {
                     </div>
 
                     {/* Payment Details */}
-                    <div className="flex flex-row justify-between bg-fa px-4 py-8 rounded-md">
+                    <div className="flex flex-row justify-between bg-fa p-8 rounded-md">
                         <Link className="md:flex md:flex-row items-center text-md gap-2 text-black2">
-                            <FaCircleUser className="text-primary font-xl size-8"/>
+                            <MdPayments className="text-white font-xl size-10 bg-primary p-2 rounded-full"/>
                             <p className="text-black2 font-medium">Payment Details</p>
                         </Link>
 
@@ -71,9 +74,9 @@ const Settings = () => {
                     </div>
 
                     {/* Change Password */}
-                    <div className="flex flex-row justify-between bg-fa px-4 py-8 rounded-md">
+                    <div className="flex flex-row justify-between bg-fa p-8 rounded-md">
                         <Link className="md:flex md:flex-row items-center text-md gap-2 text-black2">
-                            <FaCircleUser className="text-primary font-xl size-8"/>
+                            <BiShieldQuarter className="text-white font-xl size-10 bg-primary p-2 rounded-full"/>
                             <p className="text-black2 font-medium">Change Password</p>
                         </Link>
 
@@ -83,9 +86,9 @@ const Settings = () => {
                     </div>
 
                     {/* Delete Account */}
-                    <div className="flex flex-row justify-between bg-fa px-4 py-8 rounded-md">
+                    <div className="flex flex-row justify-between bg-fa p-8 rounded-md">
                         <Link className="md:flex md:flex-row items-center text-md gap-2 text-black2">
-                            <FaCircleUser className="text-primary font-xl size-8"/>
+                            <RiDeleteBin5Fill className="text-white font-xl size-10 bg-primary p-2 rounded-full"/>
                             <p className="text-black2 font-medium">Delete Account</p>
                         </Link>
 

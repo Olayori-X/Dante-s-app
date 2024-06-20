@@ -1,5 +1,5 @@
 import "../style.css";
-import { TbMathGreater } from "react-icons/tb";
+import { RxCaretRight } from "react-icons/rx";
 import { Link } from 'react-router-dom';
 import { IoNotifications } from "react-icons/io5";
 // import { CgProfile } from "react-icons/cg";
@@ -12,7 +12,8 @@ const Header = (props) => {
             <div className="flex flex-row justify-between">
                 <div className="hidden md:flex md:flex-row items-center text-sm gap-1 text-black2">
                     <p className="cursor-pointer">Home</p>
-                    <TbMathGreater className="text-primary font-medium cursor-pointer"/>
+                    {/* <TbMathGreater className="text-primary font-medium cursor-pointer"/> */}
+                    <RxCaretRight className="text-black2 font-medium cursor-pointer size-5"/>
                     <Link to={props.link} className="text-primary font-medium">{props.title}</Link>
                 </div>
 

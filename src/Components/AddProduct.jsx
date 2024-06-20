@@ -102,7 +102,7 @@ function AddProduct ({ show, handleClose }) {
                                 <div className='space-y-1 md:space-y-2 items-start text-left relative'>
                                     <label htmlFor="title" className='text-md text-black2'>Category</label><br/>
                                     <select 
-                                        className='block appearance-none border-disable rounded-md w-full p-4 text-black2 leading-tight focus:outline-disable bg-white' 
+                                        className='block appearance-none border border-disable rounded-md w-full p-4 text-black2 leading-tight focus:outline-disable bg-white' 
                                         // type='text' 
                                         id = "category" 
                                         value={category}
@@ -115,7 +115,7 @@ function AddProduct ({ show, handleClose }) {
                                       <option value="Egg" className="p-4">Egg</option>
                                     </select>
 
-                                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-black2">
                                       <RiArrowDropDownLine className="h-6 w-6"/>
                                     </div>
                                       {errors.category && <span style={{ color: 'red' }}>{errors.category}</span>}<br/>
