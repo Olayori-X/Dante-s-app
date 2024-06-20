@@ -2,6 +2,7 @@
 import "../style.css";
 import { useState, useEffect } from 'react';
 import { LiaImage } from "react-icons/lia";
+import { RiArrowDropDownLine } from "react-icons/ri";
 import { Link } from 'react-router-dom';
 import { FaUsers } from "react-icons/fa";
 // import Skeleton from 'react-loading-skeleton';
@@ -87,7 +88,7 @@ function AddProduct ({ show, handleClose }) {
           {show && (
               <div className="fixed inset-0 flex justify-center items-center z-80">
                   <div className="absolute inset-0 bg-black opacity-50"></div>
-                      <div className="relative bg-white rounded-lg w-3/4 md:w-3/4 lg:w-3/4 py-8 px-16 z-10 max-h-screen overflow-y-auto">
+                      <div className="relative bg-white rounded-lg w-3/4 md:w-3/4 lg:w-3/4 py-8 px-16 z-10 max-h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-primary scrollbar-track-white">
                           <button
                           className="absolute top-0 right-0 m-4 bg-disable rounded-full text-gray-600 text-2xl hover:text-gray-800 w-10 h-10"
                           onClick={handleClose}>
@@ -98,10 +99,10 @@ function AddProduct ({ show, handleClose }) {
                           <form onSubmit={onSubmit} className='space-y-4'>
                                 
                                 {/* Category */}
-                                <div className='space-y-1 md:space-y-2 items-start text-left'>
+                                <div className='space-y-1 md:space-y-2 items-start text-left relative'>
                                     <label htmlFor="title" className='text-md text-black2'>Category</label><br/>
                                     <select 
-                                        className='border p-4 w-full rounded-md leading-tight border-disable bg-white focus:outline-disable text-black2' 
+                                        className='block appearance-none border-disable rounded-md w-full p-4 text-black2 leading-tight focus:outline-disable bg-white' 
                                         // type='text' 
                                         id = "category" 
                                         value={category}
@@ -113,6 +114,10 @@ function AddProduct ({ show, handleClose }) {
                                       <option value="Meat" className="p-4">Meat</option>
                                       <option value="Egg" className="p-4">Egg</option>
                                     </select>
+
+                                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                      <RiArrowDropDownLine className="h-6 w-6"/>
+                                    </div>
                                       {errors.category && <span style={{ color: 'red' }}>{errors.category}</span>}<br/>
                                 </div>
 
