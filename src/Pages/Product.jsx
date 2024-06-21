@@ -145,7 +145,7 @@ function Product () {
                 
                 <div className="flex md:flex-row flex-col justify-between items-left md:items-center px-8">
                   <div className="mb-4 text-left"><Heading title="Products"/></div>
-                  <div className="flex flex-row gap-3 items-center">
+                  <div className="flex flex-col lg:flex-row gap-3 items-left lg:items-center">
                       
                       {/* Search */}
                       <div className="">
@@ -160,7 +160,7 @@ function Product () {
 
                       {/* Add Product */}
                       <div>
-                        <button onClick={openModal} className="flex flex-row gap-1 items-center p-4 bg-primary text-white text-sm rounded-md"><FaPlus/>Add Product</button>
+                        <button onClick={openModal} className="flex flex-row w-full gap-1 items-center p-4 bg-primary text-white text-sm rounded-md"><FaPlus/>Add Product</button>
                         <AddProduct show={showModal} handleClose={closeModal}/>
                         {/* {isOpen && (
                               // <div className="fixed inset-0 flex justify-center items-center z-80">
