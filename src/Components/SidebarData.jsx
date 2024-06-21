@@ -9,28 +9,28 @@ const SidebarData =
     [
       {
         title: "Dashboard",
-        path: "/Dashboard",
+        path: "/dashboard",
         icons: <RxDashboard className="w-5 h-5"/>,
         id: 1
       },
 
       {
         title: "Products",
-        path: "/Product",
+        path: "/product",
         icons: <FiBox className="w-5 h-5"/>,
         id: 2
       },
   
       {
         title: "Order",
-        path: "/Order",
+        path: "/order",
         icons: <RiFileList3Line className="w-5 h-5"/>,
         id: 3
       },
 
       {
         title: "Settings",
-        path: "/Settings",
+        path: "/settings",
         icons: <SlSettings className="w-5 h-5"/>,
         id: 4
       },

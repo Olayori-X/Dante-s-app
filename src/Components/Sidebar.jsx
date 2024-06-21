@@ -44,7 +44,7 @@ const Sidebar = () => {
                 </div>
             )}
                 <div>
-                    <div className="hidden md:flex md:flex-col sticky h-full left-0 w-60 text-left border-r border-disable p-4 bg-white md:show">
+                    <div className="hidden lg:flex lg:flex-col sticky h-full left-0 w-60 text-left border-r border-disable p-4 bg-white md:show">
                         <div className="flex flex-col justify-items-start mb-4 pl-2">                
                         <h1 className="mb-4 mt-4 font-extrabold text-primary text-2xl">Market Access</h1>
                         </div>
@@ -94,7 +94,7 @@ const Sidebar = () => {
                     </div>  
                     
                     {/* Side Toggle */}
-                    <div className="md:hidden">    
+                    <div className="lg:hidden">    
                             <button onClick={()=>toggleNavbar(true)} className="">{side ? <MdClose className="text-black bg-disable p-2 size-8 rounded-full absolute top-15 right-20 cursor-pointer"/> : <GiHamburgerMenu className="text-primary font-black absolute top-6 size-5 mr-4 left-2"/>}</button>
                             {side &&(
                             <div className="sticky h-full w-screen left-0 top-0 -translate-x-0 transition-all px-4">

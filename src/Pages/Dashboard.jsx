@@ -37,7 +37,7 @@ const Dashboard = () => {
 
               {/* Header */}
               <div className="w-full">
-                <div className="mb-4 items-center"><Header title="Dashboard" link="/Dashboard"/></div>
+                <div className="mb-4 items-center"><Header title="Dashboard" link="/dashboard"/></div>
                 
                 <div className="px-8">
                   <div className="mb-4"><Heading title="Dashboard"/></div>

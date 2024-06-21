@@ -141,7 +141,7 @@ function Product () {
 
               {/* Header */}
               <div className="w-full">
-                <div className="mb-4 items-center"><Header title="Products" link="/Product"/></div>
+                <div className="mb-4 items-center"><Header title="Products" link="/product"/></div>
                 
                 <div className="flex md:flex-row flex-col justify-between items-left md:items-center px-8">
                   <div className="mb-4 text-left"><Heading title="Products"/></div>

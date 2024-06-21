@@ -1,23 +1,22 @@
 // import { Link } from "react-router-dom";
-import "../style.css";
-import Sidebar from "../Components/Sidebar";
-import Header from "../Components/Header";
-import Heading from "../Components/Heading";
+import "../../style.css";
+import Sidebar from "../../Components/Sidebar";
+import Header from "../../Components/Header";
+import Heading from "../../Components/Heading";
+import ManageProfile from "./ManageProfile";
 import { useState, useEffect } from 'react';
-import { FaUsers } from "react-icons/fa";
-import { TbCurrencyNaira } from "react-icons/tb";
-import { FiBox } from "react-icons/fi";
-import { RiListView } from "react-icons/ri";
 import { HiUser } from "react-icons/hi2";
 import { MdPayments } from "react-icons/md";
 import { RxCaretRight } from "react-icons/rx";
 import { BiShieldQuarter } from "react-icons/bi";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { Link } from 'react-router-dom';
+import { Routes, Route, useMatch } from 'react-router-dom';
 // import Skeleton from 'react-loading-skeleton';
 
 const Settings = () => {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
+  const match = useMatch('/settings/*');
 
   useEffect(() => {
     setLoading(true)
@@ -28,6 +27,12 @@ const Settings = () => {
 
     return ( 
         <div>
+          <Routes>
+            {/* <Route path="/" element={<h3>Please select a sub-page.</h3>} /> */}
+            <Route path="profile" element={<ManageProfile />} />
+            {/* <Route path="security" element={<Security />} />
+            <Route path="notifications" element={<Notifications />} /> */}
+          </Routes>
 
           {loading ? (
             <p>Loading...</p>
@@ -50,20 +55,21 @@ const Settings = () => {
                <div className="border border-disable rounded-md px-10 py-8 mx-8">
                 <div className="gap-5 flex flex-col">
                     {/* Manage Profile */}
-                    <div className="flex flex-row justify-between bg-fa p-8 rounded-md">
-                        <Link className="md:flex md:flex-row items-center text-md gap-2 text-black2">
+                    
+                    <Link to="profile" className="flex flex-row justify-between bg-fa p-8 rounded-md cursor-pointer">
+                        <div className="flex flex-row md:flex-row items-center text-md gap-2 text-black2">
                             <HiUser className="text-white font-xl size-10 bg-primary p-2 rounded-full"/>
                             <p className="text-black2 font-medium">Manage Profile</p>
-                        </Link>
+                        </div>
 
                         <div className="flex flex-row items-center sm:ml-96 gap-3">
                             <RxCaretRight className="text-black2 font-medium cursor-pointer size-5"/>
                         </div>
-                    </div>
+                    </Link>
 
                     {/* Payment Details */}
                     <div className="flex flex-row justify-between bg-fa p-8 rounded-md">
-                        <Link className="md:flex md:flex-row items-center text-md gap-2 text-black2">
+                        <Link className="flex flex-row items-center text-md gap-2 text-black2">
                             <MdPayments className="text-white font-xl size-10 bg-primary p-2 rounded-full"/>
                             <p className="text-black2 font-medium">Payment Details</p>
                         </Link>
@@ -75,7 +81,7 @@ const Settings = () => {
 
                     {/* Change Password */}
                     <div className="flex flex-row justify-between bg-fa p-8 rounded-md">
-                        <Link className="md:flex md:flex-row items-center text-md gap-2 text-black2">
+                        <Link className="flex flex-row items-center text-md gap-2 text-black2">
                             <BiShieldQuarter className="text-white font-xl size-10 bg-primary p-2 rounded-full"/>
                             <p className="text-black2 font-medium">Change Password</p>
                         </Link>
@@ -87,7 +93,7 @@ const Settings = () => {
 
                     {/* Delete Account */}
                     <div className="flex flex-row justify-between bg-fa p-8 rounded-md">
-                        <Link className="md:flex md:flex-row items-center text-md gap-2 text-black2">
+                        <Link className="flex flex-row items-center text-md gap-2 text-black2">
                             <RiDeleteBin5Fill className="text-white font-xl size-10 bg-primary p-2 rounded-full"/>
                             <p className="text-black2 font-medium">Delete Account</p>
                         </Link>
