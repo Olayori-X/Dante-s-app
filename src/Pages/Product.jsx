@@ -160,7 +160,7 @@ function Product () {
 
                       {/* Add Product */}
                       <div>
-                        <button onClick={openModal} className="flex flex-row w-full gap-1 items-center p-4 bg-primary text-white text-sm rounded-md"><FaPlus/>Add Product</button>
+                        <button onClick={openModal} className="flex flex-row w-full gap-1 items-center p-4 bg-primary text-white text-sm text-center rounded-md"><FaPlus/>Add Product</button>
                         <AddProduct show={showModal} handleClose={closeModal}/>
                         {/* {isOpen && (
                               // <div className="fixed inset-0 flex justify-center items-center z-80">
