@@ -52,7 +52,7 @@ const Settings = () => {
                 </div>
                 
                 {/* Body */}               
-               <div className="border border-disable rounded-md px-10 py-8 mx-8">
+               <div className="border border-disable rounded-md px-4 lg:px-8 py-8 mx-8">
                 <div className="gap-5 flex flex-col">
                     {/* Manage Profile */}
                     
