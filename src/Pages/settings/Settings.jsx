@@ -56,7 +56,7 @@ const Settings = () => {
                 <div className="gap-5 flex flex-col">
                     {/* Manage Profile */}
                     
-                    <Link to="profile" className="flex flex-row justify-between bg-fa p-8 rounded-md cursor-pointer">
+                    <Link to="profile" className="flex flex-row justify-between bg-fa p-4 lg:p-8 rounded-md cursor-pointer">
                         <div className="flex flex-row md:flex-row items-center text-md gap-2 text-black2">
                             <HiUser className="text-white font-xl size-10 bg-primary p-2 rounded-full"/>
                             <p className="text-black2 font-medium">Manage Profile</p>
@@ -68,7 +68,7 @@ const Settings = () => {
                     </Link>
 
                     {/* Payment Details */}
-                    <Link to="payment" className="flex flex-row justify-between bg-fa p-8 rounded-md cursor-pointer">
+                    <Link to="payment" className="flex flex-row justify-between bg-fa p-4 lg:p-8 rounded-md cursor-pointer">
                         <div className="flex flex-row items-center text-md gap-2 text-black2">
                             <MdPayments className="text-white font-xl size-10 bg-primary p-2 rounded-full"/>
                             <p className="text-black2 font-medium">Payment Details</p>
@@ -80,7 +80,7 @@ const Settings = () => {
                     </Link>
 
                     {/* Change Password */}
-                    <Link to="changepassword" className="flex flex-row justify-between bg-fa p-8 rounded-md cursor-pointer">
+                    <Link to="changepassword" className="flex flex-row justify-between bg-fa p-4 lg:p-8 rounded-md cursor-pointer">
                         <div className="flex flex-row items-center text-md gap-2 text-black2">
                             <BiShieldQuarter className="text-white font-xl size-10 bg-primary p-2 rounded-full"/>
                             <p className="text-black2 font-medium">Change Password</p>
@@ -92,7 +92,7 @@ const Settings = () => {
                     </Link>
 
                     {/* Delete Account */}
-                    <div className="flex flex-row justify-between bg-fa p-8 rounded-md cursor-pointer">
+                    <div className="flex flex-row justify-between bg-fa p-4 lg:p-8 rounded-md cursor-pointer">
                         <div className="flex flex-row items-center text-md gap-2 text-black2">
                             <RiDeleteBin5Fill className="text-white font-xl size-10 bg-primary p-2 rounded-full"/>
                             <p className="text-black2 font-medium">Delete Account</p>
