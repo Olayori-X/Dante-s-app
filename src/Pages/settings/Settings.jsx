@@ -3,7 +3,7 @@ import "../../style.css";
 import Sidebar from "../../Components/Sidebar";
 import Header from "../../Components/Header";
 import Heading from "../../Components/Heading";
-import ManageProfile from "./ManageProfile";
+// import ManageProfile from "./ManageProfile";
 import { useState, useEffect } from 'react';
 import { HiUser } from "react-icons/hi2";
 import { MdPayments } from "react-icons/md";
@@ -11,7 +11,7 @@ import { RxCaretRight } from "react-icons/rx";
 import { BiShieldQuarter } from "react-icons/bi";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { Link } from 'react-router-dom';
-import { Routes, Route, useMatch } from 'react-router-dom';
+import {  useMatch } from 'react-router-dom';
 // import Skeleton from 'react-loading-skeleton';
 
 const Settings = () => {
@@ -27,12 +27,12 @@ const Settings = () => {
 
     return ( 
         <div>
-          <Routes>
-            {/* <Route path="/" element={<h3>Please select a sub-page.</h3>} /> */}
+          {/* <Routes>
+            <Route index path="/" />
             <Route path="profile" element={<ManageProfile />} />
             {/* <Route path="security" element={<Security />} />
             <Route path="notifications" element={<Notifications />} /> */}
-          </Routes>
+          {/* </Routes> */}
 
           {loading ? (
             <p>Loading...</p>
@@ -45,7 +45,7 @@ const Settings = () => {
 
               {/* Header */}
               <div className="w-full">
-                <div className="mb-4 items-center"><Header title="Settings" link="/Settings"/></div>
+                <div className="mb-4 items-center"><Header title="Settings" link="/settings"/></div>
                 
                 <div className="px-8">
                   <div className="mb-4"><Heading title="Settings"/></div>

@@ -30,7 +30,7 @@ const ManageProfile = () => {
 
               {/* Header */}
               <div className="w-full">
-                <div className="mb-4 items-center"><Header title="Manage Profile" link="/Dashboard"/></div>
+                <div className="mb-4 items-center"><Header title="Manage Profile" link=""/></div>
                 
                 <div className="px-8">
                   <div className="mb-4"><Heading title="Manage Profile"/></div>
