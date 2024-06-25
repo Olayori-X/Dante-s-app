@@ -94,7 +94,7 @@ const ChangePassword = () => {
                 
                 {/* Body */}
                 {/* Card */}
-                <div className="border border-disable rounded-md px-4 md:px-10 py-8 mx-8">
+                <div className="border border-white md:border-disable rounded-md px-0 md:px-10 py-2 md:py-8 mx-8">
                   <div className=" mb-4">
                     {isModalOpen && (
                       <Modal
@@ -117,7 +117,7 @@ const ChangePassword = () => {
                     <div className='space-y-2' style={{ position: 'relative' }}>
                       <label htmlFor="pwd" className='text-md md:text-md text-left mb-8'>Enter Old Password</label><br/>
                       <input 
-                        className='border p-6 w-96 md:w-full rounded-md border-fa bg-white focus:bg-white focus:outline-fa' 
+                        className='border p-6 w-full md:w-full rounded-md border-fa bg-white focus:bg-white focus:outline-fa' 
                         type= {showPassword ? 'text' : 'password'}
                         id = "pwd" 
                         placeholder='Enter old password'
@@ -160,7 +160,7 @@ const ChangePassword = () => {
                     <div className='space-y-2' style={{ position: 'relative' }}>
                       <label htmlFor="pwd" className='text-md md:text-md text-left mb-8'>Enter New Password</label><br/>
                       <input 
-                        className='border p-6 w-96 md:w-full rounded-md border-fa bg-white focus:bg-white focus:outline-fa' 
+                        className='border p-6 w-full md:w-full rounded-md border-fa bg-white focus:bg-white focus:outline-fa' 
                         type= {showNewPassword ? 'text' : 'password'}
                         id = "pwd" 
                         placeholder='Enter new password'
@@ -203,7 +203,7 @@ const ChangePassword = () => {
                     <div className='space-y-2' style={{ position: 'relative' }}>
                       <label htmlFor="pwd" className='text-md md:text-md text-left mb-8'>Re-Enter New Password</label><br/>
                       <input 
-                        className='border p-6 w-96 md:w-full rounded-md border-fa bg-white focus:bg-white focus:outline-fa' 
+                        className='border p-6 w-full md:w-full rounded-md border-fa bg-white focus:bg-white focus:outline-fa' 
                         type= {showRePassword ? 'text' : 'password'}
                         id = "pwd" 
                         placeholder='Re-enter new password'
@@ -243,8 +243,8 @@ const ChangePassword = () => {
                     </div><br/>
 
                     <div className="grid justify-items-end">    
-                      <button type="submit" onClick = {handleSubmit} disabled={spin} className='mt-4 py-4 px-20  rounded-md border-fa bg-primary hover:bg-black cursor-pointer text-white text-md font-medium'>
-                        {spin ? <div className="px-2 text-md"><FaSpinner className="animate-spin" /> </div> : 'Save'}
+                      <button type="submit" onClick = {handleSubmit} disabled={spin} className='mt-4 w-full md:w-64 py-4 px-20  rounded-md border-fa bg-primary hover:bg-black cursor-pointer text-white text-md font-medium'>
+                        {spin ? <div className="px-2 text-md"><FaSpinner className="animate-spin" /> </div> : 'Update'}
                       </button>
                     </div>
                   </form>

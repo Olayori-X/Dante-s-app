@@ -10,7 +10,7 @@ const Header = (props) => {
         <div className="px-8 py-4 border-b border-disable">
 
             <div className="flex flex-row justify-between">
-                <div className=" flex flex-row justify-start items-center text-sm gap-0 text-black2">
+                <div className=" flex flex-row justify-start p-2 md:p-0 items-center text-sm gap-0 text-black2">
                     <p className="cursor-pointer">Home</p>
                     {/* <TbMathGreater className="text-primary font-medium cursor-pointer"/> */}
                     <RxCaretRight className="text-black2 font-medium cursor-pointer size-5"/>
