@@ -3,8 +3,9 @@ import "../style.css";
 import { useState, useEffect } from 'react';
 import { LiaImage } from "react-icons/lia";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import Modal from "../Components/Modal";
 import { Link } from 'react-router-dom';
-import { FaUsers } from "react-icons/fa";
+import { FaSpinner } from 'react-icons/fa';
 // import Skeleton from 'react-loading-skeleton';
 
 function AddProduct ({ show, handleClose }) {
@@ -17,9 +18,10 @@ function AddProduct ({ show, handleClose }) {
   const [image, setImage] = useState(null);
   // const [isOpen, setIsOpen] = useState(false);
   const [errors, setErrorMessage] = useState({});
-  // const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
-  // const [isHovered, setIsHovered] = useState(false);
+  const [spin, setSpin] = useState(null);
+
 
   const handleImageChange = (e) => {
     const selectedImage = e.target.files[0];
@@ -40,46 +42,86 @@ function AddProduct ({ show, handleClose }) {
     setImage(null);
   };
 
-  // const removeModal = () => {
-  //   setIsModalOpen(false);
-  // };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
-  // const openModal = (e) => {
-  //   e.preventDefault();
 
-  //   // Validate the form inputs
-  //   if (!title || !body) {
-  //   //   setErrorMessage('Both title and body are required.');
-  //     // setSuccessMessage('');
-  //     setIsModalOpen(true);
-  //     return;
-  //   } 
-
-  //   // setErrorMessage('');
-  //   // setSuccessMessage('');
-  //   setIsOpen(true);
-  // };
-
-  // const closeModal = () => {
-  //   setIsOpen(false);
-  // };
   const onSubmit = (e) => {
     e.preventDefault();
     // handleSubmit(formData);
-    handleClose();
+    // handleClose();
   };
 
-  const proceed = () => {
-    // setIsOpen(false);
-    setSuccessMessage('A new product has been added');
-    setTitle('');
-    setBody('');
-    setImage('');
-    setPrice('');
-    setSale('');
-    // setIsModalOpen(true);
-    return; 
-  };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   // setFormData((prev) => ({ ...prev, [name]: value }));
+  //   setErrorMessage(''); // Clear error when the user starts typing
+  // };
+
+  const handleSubmit = async () => {
+    if (!category && !title && !body && !image && !price && !sale ) {
+      setErrorMessage('All fields are required.');
+      setSuccessMessage('');
+      setIsModalOpen(true);
+      return;
+    }
+
+    if (!category || !title || !body || !image || !price || !sale) {
+      setErrorMessage('Please fill out all fields.');
+      setSuccessMessage('');
+      setIsModalOpen(true);
+      return;
+    }
+
+    if (!category) {
+      setErrorMessage('Select a category.');
+      setSuccessMessage('');
+      setIsModalOpen(true);
+      return;
+    } else if (!title) {
+      setErrorMessage('Product Name is required.');
+      setSuccessMessage('');
+      setIsModalOpen(true);
+      return;
+    } else if (!body) {
+      setErrorMessage('Description is required.');
+      setSuccessMessage('');
+      setIsModalOpen(true);
+      return;
+    } else if (!image) {
+      setErrorMessage('Image is required.');
+      setSuccessMessage('');
+      setIsModalOpen(true);
+      return;
+    } else if (!price) {
+      setErrorMessage('Please enter price.');
+      setSuccessMessage('');
+      setIsModalOpen(true);
+      return;
+    } else if (!sale) {
+      setErrorMessage('Enter number of products available for sale.');
+      setSuccessMessage('');
+      setIsModalOpen(true);
+      return;
+    }
+
+    
+  
+  setSpin(true);
+  }
+
+  // const proceed = () => {
+  //   // setIsOpen(false);
+  //   setSuccessMessage('A new product has been added');
+  //   setTitle('');
+  //   setBody('');
+  //   setImage('');
+  //   setPrice('');
+  //   setSale('');
+  //   // setIsModalOpen(true);
+  //   return; 
+  // };
 
     // if (show) return null;
 
@@ -95,14 +137,28 @@ function AddProduct ({ show, handleClose }) {
                           &times;
                           </button>
 
+                          {/* Modal */}
+                          <div className=" mb-4">
+                            {isModalOpen && (
+                              <Modal
+                                message={errors || successMessage}
+                                type={errors ? 
+                                  'error' : 
+                                  'success'}
+                                onClose={closeModal}
+                                className=""
+                              />
+                            )}
+                          </div>
+
                           {/* Form */}
                           <form onSubmit={onSubmit} className='space-y-4'>
                                 
                                 {/* Category */}
-                                <div className='space-y-1 md:space-y-2 items-start text-left relative'>
-                                    <label htmlFor="title" className='text-md text-black2'>Category</label><br/>
+                                <div className='space-y-1 md:space-y-2 items-start text-left relative mb-2'>
+                                    <label htmlFor="category" className='text-md text-black2'>Category</label><br/>
                                     <select 
-                                        className='block appearance-none border border-disable rounded-md w-full p-4 text-black2 leading-tight focus:outline-disable bg-white' 
+                                        className='block appearance-none border border-disable rounded-md w-full px-4 py-6 text-black2 leading-tight focus:outline-disable bg-white' 
                                         // type='text' 
                                         id = "category" 
                                         value={category}
@@ -251,11 +307,9 @@ function AddProduct ({ show, handleClose }) {
                                 
                                 {/* Submit Button */}
                                 <div className="grid justify-items-end">
-                                  <button
-                                      onClick = {proceed} 
-                                      // type='submit'  
-                                      className=' py-4 px-24 rounded-md border-fa bg-primary hover:bg-black cursor-pointer text-white text-md font-bold'
-                                  >Send</button>
+                                <button type="submit" onClick = {handleSubmit} disabled={spin} className='mt-4 w-full md:w-64 py-4 px-20  rounded-md border-fa bg-primary hover:bg-black cursor-pointer text-white text-md font-medium'>
+                                  {spin ? <div className="px-2 text-md"><FaSpinner className="animate-spin" /> </div> : 'Add'}
+                                </button>
                                 </div> 
                           </form>
                   </div>

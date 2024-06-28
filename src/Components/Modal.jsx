@@ -1,6 +1,4 @@
 import "../style.css";
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import cancel from '../icons/cancel.svg';
 import success from '../icons/success.svg';
 

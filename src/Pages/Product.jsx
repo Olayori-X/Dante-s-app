@@ -162,26 +162,6 @@ function Product () {
                       <div>
                         <button onClick={openModal} className="flex flex-row w-full gap-1 items-center p-4 bg-primary text-white text-sm text-center rounded-md"><FaPlus/>Add Product</button>
                         <AddProduct show={showModal} handleClose={closeModal}/>
-                        {/* {isOpen && (
-                              // <div className="fixed inset-0 flex justify-center items-center z-80">
-                              //     <div className="absolute inset-0 bg-black opacity-50"></div>
-                              //     <div className="relative bg-white rounded-lg max-w-lg py-8 px-16 z-10">
-                              //         <button
-                              //           className="absolute top-0 right-0 m-4 bg-disable rounded-full text-gray-600 text-2xl hover:text-gray-800 w-10 h-10"
-                              //           onClick={closeModal}>
-                              //         &times;
-                              //         </button>
-
-                              //         <h2 className="text-xl text-primary text-center font-semibold mb-4">Send Notification</h2>
-                              //         <p className="mb-4 text-center">Do you want to send post notification?</p>
-                                      
-                              //         <div className=" flex flex-row justify-items-stretch gap-4 mr-2">
-                              //             <button className="bg-disable text-black2 py-3 px-12 rounded-md" onClick={closeModal}>No</button>
-                              //             <button className="bg-primary text-white py-3 px-12 rounded-md" onClick={proceed}>Send</button>
-                              //         </div>
-                              //     </div>
-                              // </div>
-                          )} */}
                       </div>
                   </div> 
                 </div>
