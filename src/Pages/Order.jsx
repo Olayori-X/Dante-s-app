@@ -49,14 +49,14 @@ const Order = () => {
                       {/* Tabs */}
                       <button
                         onClick={() => handleTabClick('tab1')}
-                        className={`py-4 px-12 md:px-44 focus:outline-none ${activeTab === 'tab1' ? 'bg-primary text-white text-xs md:text-lg rounded-md' : 'text-xs md:text-lg text-black2'}`}
+                        className={`py-4 px-10 md:px-44 focus:outline-none ${activeTab === 'tab1' ? 'bg-primary text-white text-md md:text-lg rounded-md' : 'text-md md:text-lg text-black2'}`}
                       >
                         Open Orders
                       </button>
 
                       <button
                         onClick={() => handleTabClick('tab2')}
-                        className={`py-4 px-12 md:px-44 focus:outline-none ${activeTab === 'tab2' ? 'bg-primary text-white text-xs md:text-lg rounded-md' : 'text-xs md:text-lg text-black2'}`}
+                        className={`py-4 px-10 md:px-44 focus:outline-none ${activeTab === 'tab2' ? 'bg-primary text-white text-md md:text-lg rounded-md' : 'text-md md:text-lg text-black2'}`}
                       >
                         Closed Orders
                       </button>
