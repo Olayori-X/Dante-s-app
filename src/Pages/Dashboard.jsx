@@ -4,6 +4,7 @@ import Sidebar from "../Components/Sidebar";
 import Header from "../Components/Header";
 import Heading from "../Components/Heading";
 import Card from "../Components/Card";
+import Reviews from "../Components/Reviews";
 import { useState, useEffect } from 'react';
 import { FaUsers } from "react-icons/fa";
 import { TbCurrencyNaira } from "react-icons/tb";
@@ -46,14 +47,15 @@ const Dashboard = () => {
                 {/* Body */}
                 {/* Card */}
                 <div className=" grid lg:grid-cols-3 sm:grid-cols-1 px-8 gap-5 mb-4">
-                  <Card className="bg-primary !important text-white" title="Total Revenue" icons={<TbCurrencyNaira className="size-10 text-white bg-primary p-2 rounded-full"/>} info="10M"/>
-                  <Card className="bg-fa !important" title="Total Products" icons={<FiBox className="size-10 text-white bg-blue p-2 rounded-full"/>} info="5K"/>
-                  <Card className="bg-fa !important" title="Total Orders" icons={<RiListView className="size-10 text-white bg-pend p-2 rounded-full"/>} info="5K"/>
+                  <Card className="bg-primary text-white" title="Total Revenue" icons={<TbCurrencyNaira className="size-10 text-white bg-[#fefefe] p-2 rounded-full"/>} info="10M"/>
+                  <Card title="Total Products" icons={<FiBox className="size-10 text-white bg-blue p-2 rounded-full"/>} info="5K"/>
+                  <Card title="Total Orders" icons={<RiListView className="size-10 text-white bg-pend p-2 rounded-full"/>} info="5K"/>
                 </div>
                 
                 {/* Reviews */}
-                <div className="flex flex-row justify-between px-8">
-                  <div className="text-primary text-xl font-semibold">Reviews</div>
+                <div className="px-8 items-left">
+                  <div className="text-primary text-left text-xl font-semibold mb-2">Reviews</div>
+                    <Reviews/>
 
                   {/* <div className=" text-black2 text-md font-medium px-4">
                     <Link to="/Order" className="flex flex-row cursor-pointer gap-1 items-center">See All<TbMathGreater/></Link>
