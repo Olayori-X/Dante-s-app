@@ -15,7 +15,8 @@ import { Link } from 'react-router-dom';
 // import Skeleton from 'react-loading-skeleton';
 
 const Dashboard = () => {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
+  
 
   useEffect(() => {
     setLoading(true)
@@ -23,6 +24,7 @@ const Dashboard = () => {
         setLoading(false)
     }, 1000)
   }, [])
+
 
     return ( 
         <div>

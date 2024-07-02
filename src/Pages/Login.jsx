@@ -103,7 +103,8 @@ useEffect(() => {
       const data = await response.json();
       // console.warn(data);
       // console.warn(JSON.stringify(data));
-      localStorage.setItem('auth', JSON.stringify(data.status));
+      // localStorage.setItem('auth', JSON.stringify(data.status));
+      
       // console.log('API response status:', response.status);
 
       if (!response.ok) {
@@ -115,6 +116,8 @@ useEffect(() => {
         setSuccessMessage('Sign-in successful.');
         setErrorMessage('')
         setIsModalOpen(true);
+        // console.log(response?.data);
+        // sessionStorage.getItem('data', JSON.stringify(response?.data))
       }
 
       setTimeout(() => {
