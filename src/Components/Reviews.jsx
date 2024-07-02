@@ -4,7 +4,7 @@ import { useAuth } from '../Components/AuthContext';
 
 
 const Reviews = () => {
-  const { authToken, setStatusCode } = useAuth();
+  const { authToken, setStatusCode, fetchNewToken } = useAuth();
   const [rating, setRating] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -12,8 +12,8 @@ const Reviews = () => {
   const BASE_URL = 'https://35b6-102-89-23-79.ngrok-free.app/api';
   const endpoint = '/seller/dashboard/get-ratings?rating=1';
 
-    useEffect(() => {
-      const fetchData = async () => {
+    // useEffect(() => {
+      const fetchData = async (token) => {
         try {
           const response = await fetch(BASE_URL + endpoint, {
               method: 'GET',
@@ -28,24 +28,28 @@ const Reviews = () => {
 
           setStatusCode(response.status);
 
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          const result = await response.json();
-          if (result.status) {
-            setRating(result.data);
+          if (response.status === 401) {
+            // Token is invalid, refresh it
+            await fetchNewToken();
+          } else if (!response.ok) {
+            throw new Error(`Network response was not ok. Status: ${response.status}`);
           } else {
-            throw new Error('Data fetch unsuccessful');
+            const result = await response.json();
+            setRating(result);
           }
-          // setLoading(false);
-        } catch (error) {
-          setError(error.message);
-          // setLoading(false);
-        }
+          } catch (error) {
+            setError(error.message);
+          }
       };
+
+      useEffect(() => {
+        if (authToken) {
+          fetchData(authToken);
+        }
+      }, [authToken]);
   
-      fetchData();
-    }, [authToken, setStatusCode]);
+    //   fetchData();
+    // }, [authToken, setStatusCode]);
 
     return ( 
         <div className="">

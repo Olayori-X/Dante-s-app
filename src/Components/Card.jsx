@@ -51,22 +51,22 @@ const Header = ({className, icons, title, info}) => {
 
     return ( 
         <div>
-            {/* <div className={combinedClasses}>
+            <div className={combinedClasses}>
                 <div>{icons}</div>
                 <h1 className="text-left">{title}</h1>
-                <h1 className="text-2xl text-left font-medium">{productCount}</h1>
-            </div>  */}
+                {/* <h1 className="text-2xl text-left font-medium">{productCount}</h1> */}
+            </div> 
 
             {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-center"> */}
-            <div className={combinedClasses}>
+            {/* <div className={combinedClasses}>
                 {stat.map((rate) => (
                     <div key={rate.id} className="flex flex-col bg-fa rounded-md text-black2 gap-1 p-6">
                         <div>{icons}</div>
                         <h1 className="text-left">{title}</h1>
                         {/* <h1 className="text-2xl text-left font-medium">{productCount}</h1> */}
-                    </div> 
-                ))}
-            </div><br/>
+                    {/* </div>  */}
+                {/* // ))} */}
+            {/* </div><br/>  */}
         </div>
      );
 }

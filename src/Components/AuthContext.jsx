@@ -7,10 +7,10 @@ export const AuthProvider = ({ children }) => {
   const [authToken, setAuthToken] = useState('');
   const [statusCode, setStatusCode] = useState(null);
 
-  const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMzViNi0xMDItODktMjMtNzkubmdyb2stZnJlZS5hcHAvYXBpL3NlbGxlci9zaWduLWluIiwiaWF0IjoxNzE5OTE5MDIxLCJleHAiOjE3MjI1MTEwMjEsIm5iZiI6MTcxOTkxOTAyMSwianRpIjoiR3NpWnllN0c0NHczeDlFTCIsInN1YiI6IjE0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.GY2KTuSDMxzEmF6vd42FkSn3p7dtlwSXAxX6z1u8pb0';
+  const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMzViNi0xMDItODktMjMtNzkubmdyb2stZnJlZS5hcHAvYXBpL3NlbGxlci9zaWduLWluIiwiaWF0IjoxNzE5OTQwNTg2LCJleHAiOjE3MjI1MzI1ODYsIm5iZiI6MTcxOTk0MDU4NiwianRpIjoiUXBrVHhsOEIyclN0ZHZYVSIsInN1YiI6IjE0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.QStbRzLs2f-S6eKafqZDkfoUPllcdkeYukZEy71N7VA';
 
   // Function to refresh the token
-  const refreshAuthToken = async () => {
+  const fetchNewToken = async () => {
     try {
       // Make a request to refresh the token
       const response = await fetch(token, {
@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
   // }, []);
 
   return (
-    <AuthContext.Provider value={{ authToken, setAuthToken, statusCode, setStatusCode }}>
+    <AuthContext.Provider value={{ authToken, setAuthToken, statusCode, setStatusCode, fetchNewToken }}>
       {children}
     </AuthContext.Provider>
   );
