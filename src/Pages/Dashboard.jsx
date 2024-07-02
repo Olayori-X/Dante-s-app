@@ -46,9 +46,9 @@ const Dashboard = () => {
                 
                 {/* Body */}
                 {/* Card */}
-                <div className=" grid lg:grid-cols-3 sm:grid-cols-1 px-8 gap-5 mb-4">
-                  <Card className="bg-primary text-white" title="Total Revenue" icons={<TbCurrencyNaira className="size-10 text-white bg-[#fefefe] p-2 rounded-full"/>} info="10M"/>
-                  <Card title="Total Products" icons={<FiBox className="size-10 text-white bg-blue p-2 rounded-full"/>} info="5K"/>
+                <div className=" grid lg:grid-cols-2 sm:grid-cols-1 px-8 gap-5 mb-4">
+                  {/* <Card className="bg-primary text-white" title="Total Revenue" icons={<TbCurrencyNaira className="size-10 text-white bg-[#fefefe] p-2 rounded-full"/>} info="10M"/> */}
+                  <Card className="bg-primary text-white" title="Total Products" icons={<FiBox className="size-10 text-primary bg-white p-2 rounded-full"/>} info="5K"/>
                   <Card title="Total Orders" icons={<RiListView className="size-10 text-white bg-pend p-2 rounded-full"/>} info="5K"/>
                 </div>
                 
